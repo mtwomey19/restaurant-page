@@ -1,8 +1,12 @@
-import Picture from '../img/wicked-local.jpg'
+import wickedLocalImg from '../img/wicked-local.jpg';
+import silverwareIcon from '../img/silverware.svg';
+import storefrontIcon from '../img/storefront.svg';
 
 
 const newsContainer = () => {
     const newsDiv = document.createElement('div');
+    newsDiv.setAttribute('class', 'news-container');
+
     const headline = newsHeadline();
     const body = newsBody();
 
@@ -25,7 +29,7 @@ const newsBody = () => {
     body.setAttribute('class', 'news-body');
 
     const img = new Image();
-    img.src = Picture;
+    img.src = wickedLocalImg;
 
     const para1 = document.createElement('p');
     para1.textContent = 'The LaBarba family introduced to the public some of the area\'s finest pizza. Prepared from an original recipe from Abruzzo, Italy, Nick\'s Pizza\'s crust is unique: a medium sized thickness cooked in large rectangular pizza pans.';
@@ -39,4 +43,33 @@ const newsBody = () => {
     return {body};
 }
 
-export {newsContainer};
+const cardContainer = () => {
+    const cardDiv = document.createElement('div');
+    cardDiv.setAttribute('class', 'card-container');
+
+    const menuCard = card('menu-card', 'Menu', silverwareIcon);
+    const aboutCard = card('about-card', 'About', storefrontIcon);
+
+    cardDiv.appendChild(menuCard.card);
+    cardDiv.appendChild(aboutCard.card);
+
+    return {cardDiv};
+}
+
+const card = (className, headingText, iconSrc) => {
+    const card = document.createElement('div');
+    card.setAttribute('class', className);
+
+    const heading = document.createElement('p');
+    heading.textContent = headingText;
+
+    const icon = new Image();
+    icon.src = iconSrc;
+
+    card.appendChild(heading);
+    card.appendChild(icon);
+
+    return {card};
+}
+
+export {newsContainer, cardContainer};

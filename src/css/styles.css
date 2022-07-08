@@ -15,5 +15,21 @@
     height: 10rem;
 }
 
+.card-container {
+    display: flex;
+}
+
+.menu-card,
+.about-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-card img,
+.about-card img {
+    width: 10rem;
+    height: 10rem;
+}
+
 
 

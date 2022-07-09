@@ -90,7 +90,7 @@ const topCard = (id, headingText, iconSrc) => {
         const contentDiv = document.getElementById('content');
         if (id === 'menu-card') {
             const menuPage = menuContainer();
-            contentDiv.append(menuPage.menuDiv);
+            contentDiv.append(menuPage.menuWindow);
         }
     }
 

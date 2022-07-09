@@ -16,17 +16,19 @@
 }
 
 .card-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
 }
 
-.menu-card,
-.about-card {
+.card {
     display: flex;
     flex-direction: column;
 }
 
-.menu-card img,
-.about-card img {
+
+
+.card img {
     width: 10rem;
     height: 10rem;
 }

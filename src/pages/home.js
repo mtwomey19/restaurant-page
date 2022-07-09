@@ -1,6 +1,8 @@
 import wickedLocalImg from '../img/wicked-local.jpg';
 import silverwareIcon from '../img/silverware.svg';
 import storefrontIcon from '../img/storefront.svg';
+import clockIcon from '../img/clock.svg';
+import phoneIcon from '../img/phone.svg';
 
 import { domClear } from '../utility';
 
@@ -51,16 +53,21 @@ const cardContainer = () => {
 
     const menuCard = card('menu-card', 'Menu', silverwareIcon);
     const aboutCard = card('about-card', 'About', storefrontIcon);
+    const hoursCard = card('hours-card', 'Hours', clockIcon);
+    const contactCard = card('contact-card', 'Contact Us', phoneIcon);
 
     cardDiv.appendChild(menuCard.card);
     cardDiv.appendChild(aboutCard.card);
+    cardDiv.appendChild(hoursCard.card);
+    cardDiv.appendChild(contactCard.card);
 
     return {cardDiv};
 }
 
-const card = (className, headingText, iconSrc) => {
+const card = (id, headingText, iconSrc) => {
     const card = document.createElement('div');
-    card.setAttribute('class', className);
+    card.setAttribute('class', 'card');
+    card.setAttribute('id', id);
 
     const heading = document.createElement('p');
     heading.textContent = headingText;
@@ -74,10 +81,12 @@ const card = (className, headingText, iconSrc) => {
     card.addEventListener('click', cardClicked);
 
     function cardClicked() {
-        console.log('Card clicked!');
-        const clearPage = domClear();
-        clearPage.clearContentDiv();
-        console.log('Page cleared.');
+        const clear = domClear();
+        if (id === 'menu-card' || id === 'about-card') {
+            clear.clearContentDiv();
+        } else {
+            clear.clearCardDiv(id);
+        }
     }
 
     return {card};

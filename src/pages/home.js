@@ -1,10 +1,11 @@
 import wickedLocalImg from '../img/wicked-local.jpg';
 import silverwareIcon from '../img/silverware.svg';
 import storefrontIcon from '../img/storefront.svg';
-import phoneIcon from '../img/phone.svg';
 
 import { domClear } from '../utility.js';
 import { hoursCard } from './cards/hours.js';
+import { contactCard } from './cards/contact.js';
+import { menuContainer } from './menu.js';
 
 
 const newsContainer = () => {
@@ -51,22 +52,21 @@ const cardContainer = () => {
     const cardDiv = document.createElement('div');
     cardDiv.setAttribute('class', 'card-container');
 
-    const menuCard = card('menu-card', 'Menu', silverwareIcon);
-    const aboutCard = card('about-card', 'About', storefrontIcon);
+    const menuCard = topCard('menu-card', 'Menu', silverwareIcon);
+    const aboutCard = topCard('about-card', 'About', storefrontIcon);
 
     const hCard = hoursCard();
-
-    const contactCard = card('contact-card', 'Contact Us', phoneIcon);
+    const cCard = contactCard();
 
     cardDiv.appendChild(menuCard.card);
     cardDiv.appendChild(aboutCard.card);
     cardDiv.appendChild(hCard.card);
-    cardDiv.appendChild(contactCard.card);
+    cardDiv.appendChild(cCard.card);
 
     return {cardDiv};
 }
 
-const card = (id, headingText, iconSrc) => {
+const topCard = (id, headingText, iconSrc) => {
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
     card.setAttribute('id', id);
@@ -84,12 +84,11 @@ const card = (id, headingText, iconSrc) => {
 
     function cardClicked() {
         const clear = domClear();
-        if (id === 'menu-card' || id === 'about-card') {
-            clear.clearContentDiv('content');
-        } else if (id === 'hours-card') {
-            clear.clearCardDiv('hours-card');
-            const bizHours = hours();
-            card.appendChild(bizHours.hoursDiv);
+        clear.clearContentDiv('content');
+        const contentDiv = document.getElementById('content');
+        if (id === 'menu-card') {
+            const menuPage = menuContainer();
+            contentDiv.append(menuPage.menuDiv);
         }
     }
 

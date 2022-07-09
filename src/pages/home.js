@@ -49,14 +49,19 @@ const newsBody = () => {
     const img = new Image();
     img.src = wickedLocalImg;
 
+    const paraDiv = document.createElement('div');
+    paraDiv.setAttribute('class', 'news-para-div');
+
     const para1 = document.createElement('p');
     para1.textContent = 'The LaBarba family introduced to the public some of the area\'s finest pizza. Prepared from an original recipe from Abruzzo, Italy, Nick\'s Pizza\'s crust is unique: a medium sized thickness cooked in large rectangular pizza pans.';
     const para2 = document.createElement('p');
     para2.textContent = 'The combination of Nick\'s tasty pizza crust, rich red sauce, blended cheese combination, and large selection of 26 tantalizing toppings, has created a loyal following from Newburyport and the surrounding region.';
 
+    paraDiv.appendChild(para1);
+    paraDiv.appendChild(para2);
+
     body.appendChild(img);
-    body.appendChild(para1);
-    body.appendChild(para2);
+    body.appendChild(paraDiv);
 
     return {body};
 }

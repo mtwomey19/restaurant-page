@@ -69,7 +69,15 @@ const card = (className, headingText, iconSrc) => {
     card.appendChild(heading);
     card.appendChild(icon);
 
+    card.addEventListener('click', cardClicked);
+
+    function cardClicked() {
+        console.log('Card clicked!');
+    }
+
     return {card};
 }
+
+
 
 export {newsContainer, cardContainer};

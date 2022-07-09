@@ -10,5 +10,3 @@ contentContainer.appendChild(newsSection.newsDiv);
 contentContainer.appendChild(cardSection.cardDiv);
 
 console.log('Execution complete.');
-
-

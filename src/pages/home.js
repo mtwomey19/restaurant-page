@@ -1,10 +1,10 @@
 import wickedLocalImg from '../img/wicked-local.jpg';
 import silverwareIcon from '../img/silverware.svg';
 import storefrontIcon from '../img/storefront.svg';
-import clockIcon from '../img/clock.svg';
 import phoneIcon from '../img/phone.svg';
 
-import { domClear } from '../utility';
+import { domClear } from '../utility.js';
+import { hoursCard } from './cards/hours.js';
 
 
 const newsContainer = () => {
@@ -53,12 +53,14 @@ const cardContainer = () => {
 
     const menuCard = card('menu-card', 'Menu', silverwareIcon);
     const aboutCard = card('about-card', 'About', storefrontIcon);
-    const hoursCard = card('hours-card', 'Hours', clockIcon);
+
+    const hCard = hoursCard();
+
     const contactCard = card('contact-card', 'Contact Us', phoneIcon);
 
     cardDiv.appendChild(menuCard.card);
     cardDiv.appendChild(aboutCard.card);
-    cardDiv.appendChild(hoursCard.card);
+    cardDiv.appendChild(hCard.card);
     cardDiv.appendChild(contactCard.card);
 
     return {cardDiv};
@@ -83,15 +85,16 @@ const card = (id, headingText, iconSrc) => {
     function cardClicked() {
         const clear = domClear();
         if (id === 'menu-card' || id === 'about-card') {
-            clear.clearContentDiv();
-        } else {
-            clear.clearCardDiv(id);
+            clear.clearContentDiv('content');
+        } else if (id === 'hours-card') {
+            clear.clearCardDiv('hours-card');
+            const bizHours = hours();
+            card.appendChild(bizHours.hoursDiv);
         }
     }
 
     return {card};
 }
-
 
 
 export { newsContainer, cardContainer };

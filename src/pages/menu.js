@@ -2,17 +2,21 @@ import pizzaIcon from '../img/pizza.svg';
 import saladIcon from '../img/salad.svg';
 import drinkIcon from '../img/drink.svg';
 
+import { navBar } from '../utility.js';
+
+import '../css/nav.css';
+
 const menuContainer = () => {
     const menuWindow = document.createElement('div');
     menuWindow.setAttribute('class', 'menu-container');
-    const header = document.createElement('h1');
-    header.textContent = 'Menu';
+
+    const navMenu = navBar('Home', 'About');
 
     const pizzaContainer = menuDiv('pizza-container', 'Pizza', pizzaIcon);
     const saladContainer = menuDiv('salad-container', 'Salad', saladIcon);
     const drinkContainer = menuDiv('drink-container', 'Drinks', drinkIcon);
 
-    menuWindow.appendChild(header);
+    menuWindow.appendChild(navMenu.navDiv);
     menuWindow.appendChild(pizzaContainer.div);
     menuWindow.appendChild(saladContainer.div);
     menuWindow.appendChild(drinkContainer.div);

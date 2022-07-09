@@ -1,12 +1,15 @@
+import { navBar } from '../utility.js';
+
+import '../css/nav.css';
+
 const aboutContainer = () => {
     const aboutWindow = document.createElement('div');
     aboutWindow.setAttribute('class', 'about-container');
-    const header = document.createElement('h1');
-    header.textContent = 'About';
 
     const historySection = historyContainer();
+    const navMenu = navBar('Home', 'Menu');
 
-    aboutWindow.appendChild(header);
+    aboutWindow.appendChild(navMenu.navDiv);
     aboutWindow.appendChild(historySection.historyDiv);
 
     return {aboutWindow};

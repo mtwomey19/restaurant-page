@@ -1,5 +1,5 @@
 import { newsContainer, cardContainer } from './pages/home.js';
-import './css/styles.css';
+import './css/home.css';
 
 const contentContainer = document.getElementById('content');
 

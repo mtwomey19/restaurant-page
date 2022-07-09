@@ -7,6 +7,8 @@ import { hoursCard } from './cards/hours.js';
 import { contactCard } from './cards/contact.js';
 import { menuContainer } from './menu.js';
 
+import '../css/menu.css';
+
 
 const newsContainer = () => {
     const newsDiv = document.createElement('div');

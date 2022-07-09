@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.history-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.past-history-container {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.present-history-container {
+    grid-column: 2 / 3;
+    grid-row: 2/ 3;
+}
+

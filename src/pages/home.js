@@ -6,8 +6,10 @@ import { domClear } from '../utility.js';
 import { hoursCard } from './cards/hours.js';
 import { contactCard } from './cards/contact.js';
 import { menuContainer } from './menu.js';
+import { aboutContainer } from './about.js';
 
 import '../css/menu.css';
+import '../css/about.css';
 
 
 const newsContainer = () => {
@@ -91,6 +93,9 @@ const topCard = (id, headingText, iconSrc) => {
         if (id === 'menu-card') {
             const menuPage = menuContainer();
             contentDiv.append(menuPage.menuWindow);
+        } else {
+            const aboutPage = aboutContainer();
+            contentDiv.append(aboutPage.aboutWindow);
         }
     }
 

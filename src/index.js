@@ -1,4 +1,4 @@
-import {newsContainer, cardContainer} from './pages/home.js';
+import { newsContainer, cardContainer } from './pages/home.js';
 import './css/styles.css';
 
 const contentContainer = document.getElementById('content');

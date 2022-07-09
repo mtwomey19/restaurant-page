@@ -2,6 +2,8 @@ import wickedLocalImg from '../img/wicked-local.jpg';
 import silverwareIcon from '../img/silverware.svg';
 import storefrontIcon from '../img/storefront.svg';
 
+import { domClear } from '../utility';
+
 
 const newsContainer = () => {
     const newsDiv = document.createElement('div');
@@ -73,6 +75,9 @@ const card = (className, headingText, iconSrc) => {
 
     function cardClicked() {
         console.log('Card clicked!');
+        const clearPage = domClear();
+        clearPage.clearContentDiv();
+        console.log('Page cleared.');
     }
 
     return {card};
@@ -80,4 +85,4 @@ const card = (className, headingText, iconSrc) => {
 
 
 
-export {newsContainer, cardContainer};
+export { newsContainer, cardContainer };

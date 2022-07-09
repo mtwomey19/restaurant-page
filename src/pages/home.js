@@ -8,9 +8,18 @@ import { contactCard } from './cards/contact.js';
 import { menuContainer } from './menu.js';
 import { aboutContainer } from './about.js';
 
-import '../css/menu.css';
-import '../css/about.css';
+const homeContainer = () => {
+    const homeWindow = document.createElement('div');
+    homeWindow.setAttribute('id', 'home-container');
 
+    const newsSection = newsContainer();
+    const cardSection = cardContainer();
+
+    homeWindow.appendChild(newsSection.newsDiv);
+    homeWindow.appendChild(cardSection.cardDiv);
+
+    return {homeWindow};
+}
 
 const newsContainer = () => {
     const newsDiv = document.createElement('div');
@@ -103,4 +112,4 @@ const topCard = (id, headingText, iconSrc) => {
 }
 
 
-export { newsContainer, cardContainer };
+export { homeContainer };

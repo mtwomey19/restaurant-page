@@ -1,10 +1,12 @@
-import { newsContainer, cardContainer } from './pages/home.js';
+import { homeContainer } from './pages/home.js';
+
+import './css/about.css';
 import './css/home.css';
+import './css/menu.css';
+import './css/nav.css';
 
 const contentContainer = document.getElementById('content');
 
-const newsSection = newsContainer();
-const cardSection = cardContainer();
+const home = homeContainer();
 
-contentContainer.appendChild(newsSection.newsDiv);
-contentContainer.appendChild(cardSection.cardDiv);
+contentContainer.appendChild(home.homeWindow);

@@ -4,11 +4,9 @@ import drinkIcon from '../img/drink.svg';
 
 import { navBar } from '../utility.js';
 
-import '../css/nav.css';
-
 const menuContainer = () => {
     const menuWindow = document.createElement('div');
-    menuWindow.setAttribute('class', 'menu-container');
+    menuWindow.setAttribute('id', 'menu-container');
 
     const navMenu = navBar('Home', 'About');
 

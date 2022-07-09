@@ -1,10 +1,8 @@
 import { navBar } from '../utility.js';
 
-import '../css/nav.css';
-
 const aboutContainer = () => {
     const aboutWindow = document.createElement('div');
-    aboutWindow.setAttribute('class', 'about-container');
+    aboutWindow.setAttribute('id', 'about-container');
 
     const historySection = historyContainer();
     const navMenu = navBar('Home', 'Menu');

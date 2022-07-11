@@ -99,6 +99,8 @@ const topCard = (id, headingText, iconSrc) => {
     card.appendChild(icon);
 
     card.addEventListener('click', cardClicked);
+    card.addEventListener('mouseover', () => heading.style.textDecoration = 'underline');
+    card.addEventListener('mouseout', () => heading.style.textDecoration = 'none');
 
     function cardClicked() {
         const clear = domClear();

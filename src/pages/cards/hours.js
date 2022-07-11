@@ -14,6 +14,8 @@ const hoursCard = () => {
     card.appendChild(contentDiv);
 
     card.addEventListener('click', cardClicked);
+    card.addEventListener('mouseover', () => heading.style.textDecoration = 'underline');
+    card.addEventListener('mouseout', () => heading.style.textDecoration = 'none');
 
     let clickCount = 0;
 
